@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>MRI Brain Tumor Detection|ADMIN PAGE</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{%static 'Css/bootstrap.css' %}" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Roboto:400,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'Css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'Css/responsive.css' %}" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url("{% static 'Images/hero-bg.png' %}");
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+                    <a class="navbar-brand" href="{% url 'AdminHome' %}">
+                        <img src="{% static 'Images/logo.png' %}" alt="" />
+                        <span>
+                            Mri Brain Tumor Detection
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <section class="about_section ">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="img-box">
+                        <img src="{% static 'Images/adm.png'%}" alt="" />
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="detail-box">
+                        <div>
+                            <a href="{% url 'AdminHome'%}" style="text-decoration: none;"> Home</a>
+                            <a href="{% url 'User_View' %}" style="text-decoration: none;">UserList</a>
+                            <a href="{% url 'home' %}" style="text-decoration: none;">SigOut</a>
+                        </div><br>
+                        {% block contents %}
+                        <div class="custom_heading-container">
+                            <h2>
+                                Admin Panel
+                            </h2>
+                        </div>
+
+                        <p>
+                            Largely, brain-based illnesses are prevalent in
+                            society. The main reason brain diseases occur is because of cell
+                            growth. It therefore impacts the brain's regular operation,
+                            which in turn impacts the health of other essential organs'
+                            functionality. Aggressive brain cancer is ultimately the outcome
+                            of cell growth. Early detection of tumors in the brain is one of
+                            the primary strategies to lower the number of fatalities
+                        </p>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: black ; color: white; text-align: center; margin-top: 50px;">
+        <div class="container">
+            <div class="social-box" style="padding-top: 4px;">
+                <a href="">
+                    <img src="{% static 'Images/fb.png' %}" alt="">
+                </a>
+                <a href="">
+                    <img src="{% static 'Images/twitter-logo.png' %}" alt="">
+                </a>
+                <a href="">
+                    <img src="{% static 'Images/linkedin-sign.png' %}" alt="">
+                </a>
+                <a href="">
+                    <img src="{% static 'Images/instagram.png' %}" alt="">
+                </a>
+            </div>
+            <br>
+            <p>Copyright &copy; 2022. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

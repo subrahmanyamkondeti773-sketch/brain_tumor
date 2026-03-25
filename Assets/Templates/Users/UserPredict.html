@@ -1,0 +1,23 @@
+ {% extends 'Users/UserHome.html' %}
+{% block contents %}
+{% load static %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-lg">
+                <h4 class="mb-4 text-center text-primary">Upload an Image</h4>
+                <form action="{% url 'predict' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="img" class="form-label fw-bold">Choose File</label>
+                        <input class="form-control" type="file" name="img" id="img">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

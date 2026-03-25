@@ -1,0 +1,34 @@
+{% extends 'Admins/AdminHome.html' %}
+{% block contents %}
+<style>
+
+</style>
+<table class="table table-primary table-hover table-sm">
+    <thead class="thead-dark text-center">
+        <tr>
+            <th>Sl N    o</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in users %}
+        <tr class="text-center">
+            <td>{{ forloop.counter }}</td>
+            <td>{{ data.Name }}</td>
+            <td>{{ data.Username }}</td>
+            <td>{{ data.Address }}</td>
+            <td><a href="{% url 'ActivateUser' data.id %}" class="btn btn-outline-primary"
+                    style="padding: 0; margin-top: 1%;">{{ data.Status }}</a></td>
+            <td>
+                <a href="{%url 'DeleteUser' data.id %}" class="btn btn-sm btn-outline-danger"
+                    style="padding:0;  margin-top: 1%;">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

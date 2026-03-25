@@ -1,0 +1,51 @@
+{% extends 'Base.html' %}
+{% block contents %}
+<div class="custom_heading-container">
+  <h2>
+    SigUp Form
+  </h2>
+</div>
+<div class="container" style="background-color: aqua;">
+  <form  action="" method="post"  enctype="multipart/form-data"  class='row g-3'>
+    {% csrf_token%}
+    <div class="col-auto">
+      {{form.Name}}
+    </div>
+<br>
+    <div class="col-auto">
+      {{form.Mobile}}
+    </div>
+    <br><br><br>
+    <div class="col-auto">
+
+      {{form.Email}}
+    </div>
+    <div class="col-auto">
+
+      {{form.Username}}
+    </div>
+    <br><br><br>
+    <div class="col-auto">
+
+      {{form.Password}}
+    </div>
+    <div class="col-auto">
+
+      {{form.Address}}
+    </div>
+    <div class="col-auto">
+    {{form.Status}}
+    </div>
+    {% for mes in messages %}
+    <div class="alert alert-danger" role="alert">
+      {{mes}}
+    </div>
+    {% endfor %}
+    <div class="col-auto" style="margin-top: 30px; margin-bottom: 30px; margin-left: 34%;">
+      <button type="submit" class="btn btn-outline-primary mb-3">SigUp</button> &nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="reset" class="btn btn-outline-warning mb-3">Reset</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
