@@ -5,9 +5,6 @@ whitenoise
 numpy==1.24.4
 opencv-python
 pillow
-scikit-learn
 
 torch==2.1.0
 torchvision
-
-matplotlib==3.7.5
